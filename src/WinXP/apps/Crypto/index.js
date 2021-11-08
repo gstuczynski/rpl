@@ -186,7 +186,7 @@ function Crypto({ onClose }) {
                     src={metaheroLogo}
                     alt="control"
                   />
-                                    <div className="com__content__right__card__text">
+                  <div className="com__content__right__card__text">
                     Metahero
                   </div>
                 </ga.OutboundLink>

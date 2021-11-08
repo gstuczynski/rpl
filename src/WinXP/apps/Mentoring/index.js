@@ -165,12 +165,7 @@ function InternetExplorer({ onClose }) {
       </section>
       <div className="ie__content">
         <div className="ie__content__inner">
-          <Google
-            route={state.route}
-            query={state.query}
-            onSearch={onSearch}
-            goMain={goMain}
-          />
+            text to mentoring
         </div>
       </div>
       <footer className="ie__footer">

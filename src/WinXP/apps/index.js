@@ -9,7 +9,7 @@ import Crypto from './Crypto';
 import Mentoring from './Mentoring';
 import Photography from './Photography';
 import TravelBlog from './TravelBlog';
-import Copyrighting from './Copyrighting';
+import Copywriting from './Copywriting';
 import iePaper from 'assets/windowsIcons/ie-paper.png';
 import ie from 'assets/windowsIcons/ie.png';
 import mine from 'assets/minesweeper/mine-icon.png';
@@ -22,6 +22,9 @@ import winamp from 'assets/windowsIcons/winamp.png';
 import paintLarge from 'assets/windowsIcons/680(32x32).png';
 import paint from 'assets/windowsIcons/680(16x16).png';
 import folder from 'assets/windowsIcons/318(48x48).png'
+import underConstructionIcon from 'assets/windowsIcons/under-construction.png';
+import mentorIcon from 'assets/windowsIcons/mentor.png';
+
 
 const gen = () => {
   let id = -1;
@@ -168,32 +171,34 @@ export const defaultIconState = [
   },
   {
     id: 7,
-    icon: paintLarge,
-    title: 'Copyrighting',
-    component: Copyrighting,
+    icon: underConstructionIcon,
+    title: 'TravelBlog',
+    component: TravelBlog,
     isFocus: false,
   },
   {
     id: 8,
-    icon: paintLarge,
+    icon: underConstructionIcon,
     title: 'Photography',
     component: Photography,
     isFocus: false,
   },
   {
     id: 9,
-    icon: paintLarge,
-    title: 'TravelBlog',
-    component: TravelBlog,
-    isFocus: false,
-  },
-  {
-    id: 9,
-    icon: paintLarge,
+    icon: mentorIcon,
     title: 'Mentoring',
     component: Mentoring,
     isFocus: false,
-  }
+  },
+  {
+    id: 10,
+    icon: paintLarge,
+    title: 'Copywriting',
+    component: Copywriting,
+    isFocus: false,
+  },
+
+
 ];
 
 export const appSettings = {
@@ -352,6 +357,64 @@ export const appSettings = {
     maximized: window.innerWidth < 800,
     multiInstance: false,
   },
+  'Internet Explorer': {
+    header: {
+      icon: iePaper,
+      title: 'InternetExplorer',
+    },
+    component: InternetExplorer,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Copywriting: {
+    header: {
+      icon: iePaper,
+      title: 'Copywriting',
+    },
+    component: Copywriting,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Mentoring: {
+    header: {
+      icon: mentorIcon,
+      title: 'Mentoring',
+    },
+    component: Mentoring,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  
 };
 
 export { InternetExplorer, Minesweeper, ErrorBox, MyComputer, Notepad, Winamp };

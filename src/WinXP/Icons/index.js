@@ -91,13 +91,14 @@ const IconsContainer = styled.div`
   position: absolute;
   margin-top: 40px;
   margin-left: 40px;
-  max-height: 700px;
+  max-height: 600px;
   display: flex;
   flex-flow: column wrap;
 `;
 
 const StyledIcon = styled(Icon)`
   width: 70px;
+  height: 80px;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
