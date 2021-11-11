@@ -25,6 +25,7 @@ import folder from 'assets/windowsIcons/318(48x48).png'
 import underConstructionIcon from 'assets/windowsIcons/under-construction.png';
 import mentorIcon from 'assets/windowsIcons/mentor.png';
 
+const isMobile = window.innerWidth <= 768
 
 const gen = () => {
   let id = -1;
@@ -35,7 +36,7 @@ const gen = () => {
 };
 const genId = gen();
 const genIndex = gen();
-export const defaultAppState = [
+export const defaultAppState = isMobile ? [] : [
   // {
   //   component: InternetExplorer,
   //   header: {
