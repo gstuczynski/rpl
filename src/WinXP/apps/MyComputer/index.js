@@ -26,6 +26,17 @@ import pullup from 'assets/windowsIcons/pullup.png';
 import logo from 'assets/github-logo.png';
 import mine from 'assets/minesweeper/mine-icon.png';
 import windows from 'assets/windowsIcons/windows.png';
+import twitterLogo from 'assets/windowsIcons/twitter.png';
+import fbLogo from 'assets/windowsIcons/fb.png';
+import instagramLogo from 'assets/windowsIcons/instagram.png';
+import tiktokLogo from 'assets/windowsIcons/tiktok.png';
+import ytLogo from 'assets/windowsIcons/yt.png';
+import mentorLogo from 'assets/windowsIcons/mentor.png';
+
+
+
+
+
 
 function MyComputer({ onClose }) {
   function onClickOptionItem(item) {
@@ -124,21 +135,11 @@ function MyComputer({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
-                <div className="com__content__left__card__row">
-                  <iframe
-                    title="ghbtn"
-                    style={{ margin: '0 0 3px -1px', height: '30px' }}
-                    src="https://ghbtns.com/github-btn.html?user=ShizukuIchi&repo=winXP&type=star&count=true&size=large"
-                    frameBorder="0"
-                    scrolling="0"
-                    width="170px"
-                    height="20px"
-                  />
-                </div>
+
                 <div className="com__content__left__card__row">
                   <img
                     className="com__content__left__card__img"
-                    src="https://cdn.iconscout.com/icon/free/png-256/medium-1425876-1205067.png"
+                    src={mentorLogo}
                     alt="control"
                   />
                   <ga.OutboundLink
@@ -147,37 +148,7 @@ function MyComputer({ onClose }) {
                     className="com__content__left__card__text link"
                     target="_blank"
                   >
-                    Medium
-                  </ga.OutboundLink>
-                </div>
-                <div className="com__content__left__card__row">
-                  <img
-                    className="com__content__left__card__img"
-                    src="https://image.flaticon.com/icons/png/128/179/179312.png"
-                    alt="control"
-                  />
-                  <ga.OutboundLink
-                    eventLabel="https://sh1zuku.csie.io/blog"
-                    to="https://sh1zuku.csie.io/blog"
-                    className="com__content__left__card__text link"
-                    target="_blank"
-                  >
-                    Blog
-                  </ga.OutboundLink>
-                </div>
-                <div className="com__content__left__card__row">
-                  <img
-                    className="com__content__left__card__img"
-                    src={mine}
-                    alt="control"
-                  />
-                  <ga.OutboundLink
-                    eventLabel="https://github.com/ShizukuIchi/minesweeper"
-                    to="https://github.com/ShizukuIchi/minesweeper"
-                    className="com__content__left__card__text link"
-                    target="_blank"
-                  >
-                    Minesweeper(mobile)
+                    Mentoring
                   </ga.OutboundLink>
                 </div>
               </div>
@@ -187,36 +158,68 @@ function MyComputer({ onClose }) {
 
             <div className="com__content__right__card com__content__right__card--me">
               <div className="com__content__right__card__header">
-                About Me :)
+                Socials :)
               </div>
               <div className="com__content__right__card__content">
                 <ga.OutboundLink
-                  eventLabel="https://github.com/ShizukuIchi"
-                  to="https://github.com/ShizukuIchi"
+                  eventLabel="https://twitter.com/grzesiorz"
+                  to="https://twitter.com/grzesiorz"
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
                   <img
                     className="com__content__right__card__img"
-                    src={logo}
+                    src={twitterLogo}
                     alt="control"
                   />
-                  <div className="com__content__right__card__text">Github</div>
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  eventLabel="https://sh1zuku.csie.io"
-                  to="https://sh1zuku.csie.io"
+                  eventLabel="https://www.facebook.com/roleplayinglife"
+                  to="https://www.facebook.com/roleplayinglife"
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
                   <img
                     className="com__content__right__card__img"
-                    src="https://a.ppy.sh/2926513_1448497605.png"
+                    src={fbLogo}
                     alt="control"
                   />
-                  <div className="com__content__right__card__text">
-                    My Website
-                  </div>
+                </ga.OutboundLink>
+                <ga.OutboundLink
+                  // eventLabel="https://sh1zuku.csie.io"
+                  // to="https://sh1zuku.csie.io"
+                  className="com__content__right__card__item--me"
+                  target="_blank"
+                >
+                  <img
+                    className="com__content__right__card__img"
+                    src={instagramLogo}
+                    alt="control"
+                  />
+                </ga.OutboundLink>
+                <ga.OutboundLink
+                  // eventLabel="https://sh1zuku.csie.io"
+                  // to="https://sh1zuku.csie.io"
+                  className="com__content__right__card__item--me"
+                  target="_blank"
+                >
+                  <img
+                    className="com__content__right__card__img"
+                    src={tiktokLogo}
+                    alt="control"
+                  />
+                </ga.OutboundLink>
+                <ga.OutboundLink
+                  eventLabel="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
+                  to="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
+                  className="com__content__right__card__item--me"
+                  target="_blank"
+                >
+                  <img
+                    className="com__content__right__card__img"
+                    src={ytLogo}
+                    alt="control"
+                  />
                 </ga.OutboundLink>
               </div>
             </div>
@@ -587,7 +590,7 @@ const Div = styled.div`
   .com__content__right__card__item--me {
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 80px;
     margin-bottom: 15px;
     height: auto;
     & > * {

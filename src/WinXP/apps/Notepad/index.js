@@ -5,7 +5,14 @@ import { WindowDropDowns } from 'components';
 import dropDownData from './dropDownData';
 
 export default function Notepad({ onClose }) {
-  const [docText, setDocText] = useState('');
+
+  const text = `- crypto website
+  - travel blog
+  - photography website
+  - implement allow users to write comments
+  - analitics
+  `
+  const [docText, setDocText] = useState(text);
   const [wordWrap, setWordWrap] = useState(false);
 
   function onClickOptionItem(item) {

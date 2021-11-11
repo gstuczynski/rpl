@@ -77,6 +77,26 @@ export const defaultAppState = [
     zIndex: genIndex(),
   },
   {
+    component: MyComputer,
+    header: {
+      title: 'My Computer',
+      icon: computer,
+    },
+    defaultSize: {
+      width: 660,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 250,
+      y: 40,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    id: genId(),
+    zIndex: genIndex(),
+  },
+  {
     component: Winamp,
     header: {
       title: 'Winamp',
@@ -88,8 +108,8 @@ export const defaultAppState = [
       height: 0,
     },
     defaultOffset: {
-      x: 40,
-      y: 0,
+      x: 400,
+      y: 80,
     },
     resizable: false,
     minimized: false,
@@ -97,26 +117,7 @@ export const defaultAppState = [
     id: genId(),
     zIndex: genIndex(),
   },
-  // {
-  //   component: MyComputer,
-  //   header: {
-  //     title: 'My Computer',
-  //     icon: computer,
-  //   },
-  //   defaultSize: {
-  //     width: 660,
-  //     height: 500,
-  //   },
-  //   defaultOffset: {
-  //     x: 250,
-  //     y: 40,
-  //   },
-  //   resizable: true,
-  //   minimized: false,
-  //   maximized: window.innerWidth < 800,
-  //   id: genId(),
-  //   zIndex: genIndex(),
-  // },
+
 ];
 
 export const defaultIconState = [
@@ -143,7 +144,7 @@ export const defaultIconState = [
   },
   {
     id: 3,
-    icon: folder,
+    icon: underConstructionIcon,
     title: 'Crypto',
     component: Crypto,
     isFocus: false,
@@ -283,7 +284,7 @@ export const appSettings = {
   Notepad: {
     header: {
       icon: notepad,
-      title: 'Untitled - Notepad',
+      title: 'To do list',
     },
     component: Notepad,
     defaultSize: {

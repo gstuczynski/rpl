@@ -1,231 +1,188 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import ga from 'react-ga';
 
-import { WindowDropDowns } from 'components';
+import { WindowDropDowns, Google } from 'components';
 import dropDownData from './dropDownData';
+import ie from 'assets/windowsIcons/ie-paper.png';
+import printer from 'assets/windowsIcons/17(32x32).png';
 import go from 'assets/windowsIcons/290.png';
+import links from 'assets/windowsIcons/links.png';
 import search from 'assets/windowsIcons/299(32x32).png';
-import computer from 'assets/windowsIcons/676(16x16).png';
+import favorite from 'assets/windowsIcons/744(32x32).png';
 import back from 'assets/windowsIcons/back.png';
+import earth from 'assets/windowsIcons/earth.png';
+import edit from 'assets/windowsIcons/edit.png';
 import forward from 'assets/windowsIcons/forward.png';
-import up from 'assets/windowsIcons/up.png';
-import viewInfo from 'assets/windowsIcons/view-info.ico';
-import remove from 'assets/windowsIcons/302(16x16).png';
-import control from 'assets/windowsIcons/300(16x16).png';
-import network from 'assets/windowsIcons/693(16x16).png';
-import document from 'assets/windowsIcons/308(16x16).png';
-import folderSmall from 'assets/windowsIcons/318(16x16).png';
-import menu from 'assets/windowsIcons/358(32x32).png';
-import folder from 'assets/windowsIcons/318(48x48).png';
-import folderOpen from 'assets/windowsIcons/337(32x32).png';
-import disk from 'assets/windowsIcons/334(48x48).png';
-import cd from 'assets/windowsIcons/111(48x48).png';
-import dropdown from 'assets/windowsIcons/dropdown.png';
-import pullup from 'assets/windowsIcons/pullup.png';
-import metaheroLogo from 'assets/windowsIcons/metahero.png';
-import mine from 'assets/minesweeper/mine-icon.png';
+import history from 'assets/windowsIcons/history.png';
+import home from 'assets/windowsIcons/home.png';
+import mail from 'assets/windowsIcons/mail.png';
+import msn from 'assets/windowsIcons/msn.png';
+import refresh from 'assets/windowsIcons/refresh.png';
+import stop from 'assets/windowsIcons/stop.png';
 import windows from 'assets/windowsIcons/windows.png';
+import dropdown from 'assets/windowsIcons/dropdown.png';
 
 function Crypto({ onClose }) {
+  const [state, setState] = useState({
+    route: 'main',
+    query: '',
+  });
+  function onSearch(str) {
+    if (str.length) {
+      setState({
+        route: 'search',
+        query: str,
+      });
+    }
+  }
+  function goMain() {
+    setState({
+      route: 'main',
+      query: '',
+    });
+  }
   function onClickOptionItem(item) {
     switch (item) {
       case 'Close':
         onClose();
+        break;
+      case 'Home Page':
+      case 'Back':
+        goMain();
         break;
       default:
     }
   }
   return (
     <Div>
-      <section className="com__toolbar">
-        <div className="com__options">
+      <section className="ie__toolbar">
+        <div className="ie__options">
           <WindowDropDowns
             items={dropDownData}
             onClickItem={onClickOptionItem}
+            height={21}
           />
         </div>
-        <img className="com__windows-logo" src={windows} alt="windows" />
+        <img className="ie__windows-logo" src={windows} alt="windows" />
       </section>
-      <section className="com__function_bar">
-        <div className="com__function_bar__button--disable">
-          <img className="com__function_bar__icon" src={back} alt="" />
-          <span className="com__function_bar__text">Back</span>
-          <div className="com__function_bar__arrow" />
+      <section className="ie__function_bar">
+        <div
+          onClick={goMain}
+          className={`ie__function_bar__button${
+            state.route === 'main' ? '--disable' : ''
+          }`}
+        >
+          <img className="ie__function_bar__icon" src={back} alt="" />
+          <span className="ie__function_bar__text">Back</span>
+          <div className="ie__function_bar__arrow" />
         </div>
-        <div className="com__function_bar__button--disable">
-          <img className="com__function_bar__icon" src={forward} alt="" />
-          <div className="com__function_bar__arrow" />
+        <div className="ie__function_bar__button--disable">
+          <img className="ie__function_bar__icon" src={forward} alt="" />
+          <div className="ie__function_bar__arrow" />
         </div>
-        <div className="com__function_bar__button">
-          <img className="com__function_bar__icon--normalize" src={up} alt="" />
+        <div className="ie__function_bar__button">
+          <img className="ie__function_bar__icon--margin-1" src={stop} alt="" />
         </div>
-        <div className="com__function_bar__separate" />
-        <div className="com__function_bar__button">
+        <div className="ie__function_bar__button">
           <img
-            className="com__function_bar__icon--normalize "
+            className="ie__function_bar__icon--margin-1"
+            src={refresh}
+            alt=""
+          />
+        </div>
+        <div className="ie__function_bar__button" onClick={goMain}>
+          <img className="ie__function_bar__icon--margin-1" src={home} alt="" />
+        </div>
+        <div className="ie__function_bar__separate" />
+        <div className="ie__function_bar__button">
+          <img
+            className="ie__function_bar__icon--normalize "
             src={search}
             alt=""
           />
-          <span className="com__function_bar__text">Search</span>
+          <span className="ie__function_bar__text">Search</span>
         </div>
-        <div className="com__function_bar__button">
+        <div className="ie__function_bar__button">
           <img
-            className="com__function_bar__icon--normalize"
-            src={folderOpen}
+            className="ie__function_bar__icon--normalize"
+            src={favorite}
             alt=""
           />
-          <span className="com__function_bar__text">Folders</span>
+          <span className="ie__function_bar__text">Favorites</span>
         </div>
-        <div className="com__function_bar__separate" />
-        <div className="com__function_bar__button">
+        <div className="ie__function_bar__button">
+          <img className="ie__function_bar__icon" src={history} alt="" />
+        </div>
+        <div className="ie__function_bar__separate" />
+        <div className="ie__function_bar__button">
+          <img className="ie__function_bar__icon--margin-1" src={mail} alt="" />
+          <div className="ie__function_bar__arrow--margin-11" />
+        </div>
+        <div className="ie__function_bar__button">
           <img
-            className="com__function_bar__icon--margin12"
-            src={menu}
+            className="ie__function_bar__icon--margin12"
+            src={printer}
             alt=""
           />
-          <div className="com__function_bar__arrow" />
+        </div>
+        <div className="ie__function_bar__button--disable">
+          <img className="ie__function_bar__icon" src={edit} alt="" />
+        </div>
+        <div className="ie__function_bar__button">
+          <img className="ie__function_bar__icon--margin12" src={msn} alt="" />
         </div>
       </section>
-      <section className="com__address_bar">
-        <div className="com__address_bar__title">Address</div>
-        <div className="com__address_bar__content">
-          <img
-            src={computer}
-            alt="ie"
-            className="com__address_bar__content__img"
-          />
-          <div className="com__address_bar__content__text">Crypto</div>
+      <section className="ie__address_bar">
+        <div className="ie__address_bar__title">Address</div>
+        <div className="ie__address_bar__content">
+          <img src={ie} alt="ie" className="ie__address_bar__content__img" />
+          <div className="ie__address_bar__content__text">
+            {`https://www.google.com.tw${
+              state.route === 'search'
+                ? `/search?q=${encodeURIComponent(state.query)}`
+                : ''
+            }`}
+          </div>
           <img
             src={dropdown}
             alt="dropdown"
-            className="com__address_bar__content__img"
+            className="ie__address_bar__content__img"
           />
         </div>
-        <div className="com__address_bar__go">
-          <img className="com__address_bar__go__img" src={go} alt="go" />
-          <span className="com__address_bar__go__text">Go</span>
+        <div className="ie__address_bar__go">
+          <img className="ie__address_bar__go__img" src={go} alt="go" />
+          <span className="ie__address_bar__go__text">Go</span>
+        </div>
+        <div className="ie__address_bar__separate" />
+        <div className="ie__address_bar__links">
+          <span className="ie__address_bar__links__text">Links</span>
+          <img
+            className="ie__address_bar__links__img"
+            src={links}
+            alt="links"
+          />
         </div>
       </section>
-      <div className="com__content">
-        <div className="com__content__inner">
-          <div className="com__content__left">
-
-
-            <div className="com__content__left__card">
-              <div className="com__content__left__card__header">
-                <div className="com__content__left__card__header__text">
-                  Details
-                </div>
-                <img
-                  src={pullup}
-                  alt=""
-                  className="com__content__left__card__header__img"
-                />
-              </div>
-              <div className="com__content__left__card__content">
-                <div className="com__content__left__card__row">
-                  <iframe
-                    title="ghbtn"
-                    style={{ margin: '0 0 3px -1px', height: '30px' }}
-                    src="https://ghbtns.com/github-btn.html?user=ShizukuIchi&repo=winXP&type=star&count=true&size=large"
-                    frameBorder="0"
-                    scrolling="0"
-                    width="170px"
-                    height="20px"
-                  />
-                </div>
-                <div className="com__content__left__card__row">
-                  <img
-                    className="com__content__left__card__img"
-                    src="https://cdn.iconscout.com/icon/free/png-256/medium-1425876-1205067.png"
-                    alt="control"
-                  />
-                  <ga.OutboundLink
-                    eventLabel="https://medium.com/@ShizukuIchi"
-                    to="https://medium.com/@ShizukuIchi"
-                    className="com__content__left__card__text link"
-                    target="_blank"
-                  >
-                    Medium
-                  </ga.OutboundLink>
-                </div>
-                <div className="com__content__left__card__row">
-                  <img
-                    className="com__content__left__card__img"
-                    src="https://image.flaticon.com/icons/png/128/179/179312.png"
-                    alt="control"
-                  />
-                  <ga.OutboundLink
-                    eventLabel="https://sh1zuku.csie.io/blog"
-                    to="https://sh1zuku.csie.io/blog"
-                    className="com__content__left__card__text link"
-                    target="_blank"
-                  >
-                    Blog
-                  </ga.OutboundLink>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="com__content__right">
-
-            <div className="com__content__right__card com__content__right__card--me">
-              <div className="com__content__right__card__header">
-                My Portfolio / Research
-              </div>
-              <div className="com__content__right__card__content">
-                <ga.OutboundLink
-                  eventLabel="https://github.com/ShizukuIchi"
-                  to="https://github.com/ShizukuIchi"
-                  className="com__content__right__card__item--me"
-                  target="_blank"
-                >
-                  <img
-                    className="com__content__right__card__img"
-                    src={metaheroLogo}
-                    alt="control"
-                  />
-                  <div className="com__content__right__card__text">
-                    Metahero
-                  </div>
-                </ga.OutboundLink>
-                <ga.OutboundLink
-                  eventLabel="https://sh1zuku.csie.io"
-                  to="https://sh1zuku.csie.io"
-                  className="com__content__right__card__item--me"
-                  target="_blank"
-                >
-                  <img
-                    className="com__content__right__card__img"
-                    src="https://a.ppy.sh/2926513_1448497605.png"
-                    alt="control"
-                  />
-                  <div className="com__content__right__card__text">
-                    Dotmoovs
-                  </div>
-                </ga.OutboundLink>
-                <ga.OutboundLink
-                  eventLabel="https://sh1zuku.csie.io"
-                  to="https://sh1zuku.csie.io"
-                  className="com__content__right__card__item--me"
-                  target="_blank"
-                >
-                  <img
-                    className="com__content__right__card__img"
-                    src="https://a.ppy.sh/2926513_1448497605.png"
-                    alt="control"
-                  />
-                  <div className="com__content__right__card__text">
-                    Dotmoovs
-                  </div>
-                </ga.OutboundLink>
-              </div>
-              
-            </div>
-          </div>
+      <div className="ie__content">
+        <div className="ie__content__inner">
+            text to Crypto
         </div>
       </div>
+      <footer className="ie__footer">
+        <div className="ie__footer__status">
+          <img className="ie__footer__status__img" src={ie} alt="" />
+          <span className="ie__footer__status__text">Done</span>
+        </div>
+        <div className="ie__footer__block" />
+        <div className="ie__footer__block" />
+        <div className="ie__footer__block" />
+        <div className="ie__footer__block" />
+        <div className="ie__footer__right">
+          <img className="ie__footer__right__img" src={earth} alt="" />
+          <span className="ie__footer__right__text">Internet</span>
+          <div className="ie__footer__right__dots" />
+        </div>
+      </footer>
     </Div>
   );
 }
@@ -238,7 +195,8 @@ const Div = styled.div`
   overflow: hidden;
   flex-direction: column;
   background: linear-gradient(to right, #edede5 0%, #ede8cd 100%);
-  .com__toolbar {
+
+  .ie__toolbar {
     position: relative;
     display: flex;
     align-items: center;
@@ -247,29 +205,27 @@ const Div = styled.div`
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     flex-shrink: 0;
   }
-  .com__options {
+  .ie__options {
     height: 23px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1px 0 1px 2px;
-    border-left: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    padding-left: 2px;
     flex: 1;
   }
-  .com__windows-logo {
+  .ie__windows-logo {
     height: 100%;
     border-left: 1px solid white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  .com__function_bar {
+  .ie__function_bar {
     height: 36px;
     display: flex;
     align-items: center;
     font-size: 11px;
     padding: 1px 3px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
   }
-  .com__function_bar__button {
+  .ie__function_bar__button {
     display: flex;
     height: 100%;
     align-items: center;
@@ -289,7 +245,7 @@ const Div = styled.div`
       }
     }
   }
-  .com__function_bar__button--disable {
+  .ie__function_bar__button--disable {
     filter: grayscale(1);
     opacity: 0.7;
     display: flex;
@@ -297,10 +253,10 @@ const Div = styled.div`
     align-items: center;
     border: 1px solid rgba(0, 0, 0, 0);
   }
-  .com__function_bar__text {
+  .ie__function_bar__text {
     margin-right: 4px;
   }
-  .com__function_bar__icon {
+  .ie__function_bar__icon {
     height: 30px;
     width: 30px;
     &--normalize {
@@ -319,13 +275,13 @@ const Div = styled.div`
       width: 30px;
     }
   }
-  .com__function_bar__separate {
+  .ie__function_bar__separate {
     height: 90%;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.2);
     margin: 0 2px;
   }
-  .com__function_bar__arrow {
+  .ie__function_bar__arrow {
     height: 100%;
     display: flex;
     align-items: center;
@@ -338,7 +294,7 @@ const Div = styled.div`
       border-style: solid;
     }
   }
-  .com__function_bar__arrow--margin-11 {
+  .ie__function_bar__arrow--margin-11 {
     height: 100%;
     display: flex;
     align-items: center;
@@ -351,22 +307,21 @@ const Div = styled.div`
       border-style: solid;
     }
   }
-  .com__address_bar {
-    flex-shrink: 0;
+  .ie__address_bar {
     border-top: 1px solid rgba(255, 255, 255, 0.7);
-    height: 20px;
+    height: 22px;
     font-size: 11px;
     display: flex;
     align-items: center;
-    padding: 0 2px;
-    box-shadow: inset 0 -2px 3px -1px #b0b0b0;
+    padding: 0 2px 2px;
+    box-shadow: inset 0 -2px 3px -1px #2d2d2d;
   }
-  .com__address_bar__title {
+  .ie__address_bar__title {
     line-height: 100%;
     color: rgba(0, 0, 0, 0.5);
     padding: 5px;
   }
-  .com__address_bar__content {
+  .ie__address_bar__content {
     border: rgba(122, 122, 255, 0.6) 1px solid;
     height: 100%;
     display: flex;
@@ -388,15 +343,14 @@ const Div = styled.div`
       filter: brightness(1.1);
     }
     &__text {
-      white-space: nowrap;
       position: absolute;
       white-space: nowrap;
       left: 16px;
       right: 17px;
+      overflow: hidden;
     }
   }
-
-  .com__address_bar__go {
+  .ie__address_bar__go {
     display: flex;
     align-items: center;
     padding: 0 18px 0 5px;
@@ -408,7 +362,7 @@ const Div = styled.div`
       margin-right: 3px;
     }
   }
-  .com__address_bar__links {
+  .ie__address_bar__links {
     display: flex;
     align-items: center;
     padding: 0 18px 0 5px;
@@ -425,183 +379,86 @@ const Div = styled.div`
       color: rgba(0, 0, 0, 0.5);
     }
   }
-  .com__address_bar__separate {
+  .ie__address_bar__separate {
     height: 100%;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 1px 0 rgba(255, 255, 255, 0.7);
   }
-  .com__content {
+  .ie__content {
     flex: 1;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-top-width: 0;
+    overflow: auto;
+    padding-left: 1px;
+    border-left: 1px solid #6f6f6f;
     background-color: #f1f1f1;
-    overflow: auto;
-    font-size: 11px;
     position: relative;
   }
-  .com__content__inner {
-    display: flex;
-    height: 100%;
-    overflow: auto;
-  }
-  .com__content__left {
-    width: 180px;
-    height: 100%;
-    background: linear-gradient(to bottom, #748aff 0%, #4057d3 100%);
-    overflow: auto;
-    padding: 10px;
-  }
-
-  .com__content__left__card {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+  .ie__content__inner {
+    position: relative;
+    min-height: 800px;
+    min-width: 800px;
     width: 100%;
-    overflow: hidden;
+    height: 100%;
   }
-  .com__content__left__card:not(:last-child) {
-    margin-bottom: 12px;
-  }
-  .com__content__left__card__header {
+  .ie__footer {
+    height: 20px;
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 3px rgba(50, 50, 50, 0.8);
+    background-color: rgb(236, 233, 216);
     display: flex;
     align-items: center;
-    height: 23px;
-    padding-left: 11px;
-    padding-right: 2px;
-    cursor: pointer;
-    background: linear-gradient(
-      to right,
-      rgb(240, 240, 255) 0,
-      rgb(240, 240, 255) 30%,
-      rgb(168, 188, 255) 100%
-    );
+    padding-top: 2px;
   }
-  .com__content__left__card__header:hover {
-    & .com__content__left__card__header__text {
-      color: #1c68ff;
-    }
-  }
-  .com__content__left__card__header__text {
-    font-weight: 700;
-    color: #0c327d;
+  .ie__footer__status {
     flex: 1;
-  }
-  .com__content__left__card__header__img {
-    width: 18px;
-    height: 18px;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
-  }
-  .com__content__left__card__content {
-    padding: 5px 10px;
-    background: linear-gradient(
-      to right,
-      rgb(180, 200, 251) 0%,
-      rgb(164, 185, 251) 50%,
-      rgb(180, 200, 251) 100%
-    );
-    background-color: rgba(198, 211, 255, 0.87);
-  }
-  .com__content__left__card__row {
-    display: flex;
-    margin-bottom: 2px;
-  }
-
-  .com__content__left__card__img {
-    width: 14px;
-    height: 14px;
-    margin-right: 5px;
-  }
-  .com__content__left__card__text {
-    font-size: 10px;
-    line-height: 14px;
-    color: #0c327d;
-    &.black {
-      color: #000;
-    }
-    &.bold {
-      font-weight: bold;
-    }
-
-    &.link:hover {
-      cursor: pointer;
-      color: #2b72ff;
-      text-decoration: underline;
-    }
-  }
-  .com__content__right {
     height: 100%;
-    overflow: auto;
-    background-color: #fff;
-    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+    &__text {
+      font-size: 11px;
+    }
+    &__img {
+      height: 14px;
+      width: 14px;
+      margin-right: 3px;
+    }
   }
-  .com__content__right__card__header {
-    width: 300px;
-    font-weight: 700;
-    padding: 2px 0 3px 12px;
+  .ie__footer__block {
+    height: 85%;
+    width: 22px;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: inset 1px 0 rgba(255, 255, 255, 0.7);
+  }
+  .ie__footer__right {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 80%;
+    border-left: 1px solid rgba(0, 0, 0, 0.11);
+    box-shadow: inset 1px 0 rgba(255, 255, 255, 0.7);
+    padding-left: 5px;
     position: relative;
-    &:after {
-      content: '';
-      display: block;
-      background: linear-gradient(to right, #70bfff 0, #fff 100%);
+    &__text {
+      font-size: 11px;
+    }
+    &__img {
+      height: 14px;
+      width: 14px;
+      margin-right: 3px;
+    }
+    &__dots {
       position: absolute;
-      bottom: 0;
-      left: -12px;
-      height: 1px;
-      width: 100%;
-    }
-  }
-  .com__content__right__card__content {
-    display: flex;
-    align-items: center;
-    padding-right: 0;
-    flex-wrap: wrap;
-    padding: 15px 15px 0;
-  }
-  .com__content__right__card__item {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    margin-bottom: 15px;
-    height: auto;
-  }
-  .com__content__right__card__img {
-    width: 45px;
-    height: 45px;
-    margin-right: 5px;
-  }
-  .com__content__right__card__text {
-    white-space: nowrap;
-    height: 100%;
-  }
-  .com__content__right__card--me {
-    .com__content__right__card__header:after,
-    .com__content__right__card__header {
-      transition: 0.4s;
-    }
-    &:hover {
-      .com__content__right__card__header:after {
-        width: 0;
-      }
-      .com__content__right__card__header {
-        transform: scale(1.2) translate(20px, 5px);
-      }
-    }
-  }
-  .com__content__right__card__item--me {
-    display: flex;
-    align-items: center;
-    width: 200px;
-    margin-bottom: 15px;
-    height: auto;
-    & > * {
-      transition: transform 0.2s;
-    }
-    &:hover .com__content__right__card__img {
-      transform: rotate(-10deg) scale(0.9);
-    }
-    &:hover .com__content__right__card__text {
-      transform: scale(1.2);
-      transition-timing-function: cubic-bezier(0.23, 1.93, 0.59, -0.15);
+      right: 11px;
+      bottom: -1px;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0px rgba(0, 0, 0, 0.25), 5.5px 0px rgba(0, 0, 0, 0.25),
+        9px 0px rgba(0, 0, 0, 0.25), 5.5px -3.5px rgba(0, 0, 0, 0.25),
+        9px -3.5px rgba(0, 0, 0, 0.25), 9px -7px rgba(0, 0, 0, 0.25),
+        3px 1px rgba(255, 255, 255, 1), 6.5px 1px rgba(255, 255, 255, 1),
+        10px 1px rgba(255, 255, 255, 1), 10px -2.5px rgba(255, 255, 255, 1),
+        10px -6px rgba(255, 255, 255, 1);
     }
   }
 `;
