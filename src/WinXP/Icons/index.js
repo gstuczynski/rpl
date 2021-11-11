@@ -94,6 +94,9 @@ const IconsContainer = styled.div`
   max-height: 600px;
   display: flex;
   flex-flow: column wrap;
+  @media (max-width: 768px) {
+    max-height: 400px;
+  }
 `;
 
 const StyledIcon = styled(Icon)`
