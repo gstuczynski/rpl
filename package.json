@@ -1,9 +1,9 @@
 {
-  "name": "winXP",
+  "name": "RolePlayingLife",
   "version": "0.1.0",
   "private": true,
-  "author": "ShizukuIchi <shizukuichi@gmail.com>",
-  "homepage": "https://winxp.now.sh",
+  "author": "Grzegorz Stuczynski <stuczynski.g@gmail.com>",
+  "homepage": "https://roleplayinglife.pl",
   "dependencies": {
     "lodash.samplesize": "^4.2.0",
     "react": "^16.8.6",
