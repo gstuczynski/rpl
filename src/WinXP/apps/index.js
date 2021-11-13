@@ -153,7 +153,7 @@ export const defaultIconState = [
   {
     id: 4,
     icon: notepadLarge,
-    title: 'Notepad',
+    title: 'To do List',
     component: Notepad,
     isFocus: false,
   },
@@ -403,6 +403,44 @@ export const appSettings = {
       title: 'Mentoring',
     },
     component: Mentoring,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  Photography: {
+    header: {
+      icon: mentorIcon,
+      title: 'Photography',
+    },
+    component: Photography,
+    defaultSize: {
+      width: 700,
+      height: 500,
+    },
+    defaultOffset: {
+      x: 140,
+      y: 30,
+    },
+    resizable: true,
+    minimized: false,
+    maximized: window.innerWidth < 800,
+    multiInstance: true,
+  },
+  TravelBlog: {
+    header: {
+      icon: mentorIcon,
+      title: 'TravelBlog',
+    },
+    component: TravelBlog,
     defaultSize: {
       width: 700,
       height: 500,

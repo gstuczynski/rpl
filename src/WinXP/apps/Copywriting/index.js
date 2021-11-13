@@ -165,7 +165,7 @@ function Copywriting({ onClose }) {
       </section>
       <div className="ie__content">
         <div className="ie__content__inner">
-Something about copywriting + link
+        under construction
         </div>
       </div>
       <footer className="ie__footer">

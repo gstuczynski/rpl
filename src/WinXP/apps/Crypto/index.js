@@ -165,7 +165,7 @@ function Crypto({ onClose }) {
       </section>
       <div className="ie__content">
         <div className="ie__content__inner">
-            text to Crypto
+            under construction
         </div>
       </div>
       <footer className="ie__footer">

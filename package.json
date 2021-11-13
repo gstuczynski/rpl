@@ -5,6 +5,7 @@
   "author": "Grzegorz Stuczynski <stuczynski.g@gmail.com>",
   "homepage": "https://roleplayinglife.pl",
   "dependencies": {
+    "ga-4-react": "^0.1.281",
     "lodash.samplesize": "^4.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

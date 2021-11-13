@@ -143,8 +143,8 @@ function MyComputer({ onClose }) {
                     alt="control"
                   />
                   <ga.OutboundLink
-                    eventLabel="https://medium.com/@ShizukuIchi"
-                    to="https://medium.com/@ShizukuIchi"
+                    eventLabel="https://mentoring.roleplayinglife.pl/"
+                    to="https://mentoring.roleplayinglife.pl/"
                     className="com__content__left__card__text link"
                     target="_blank"
                   >

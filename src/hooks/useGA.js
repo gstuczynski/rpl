@@ -4,7 +4,7 @@ import ga from 'react-ga';
 function useGA(id, route) {
   useEffect(() => {
     ga.initialize(id);
-    ga.pageview(route);
+    // ga.pageview(route);
   }, [id, route]);
 }
 

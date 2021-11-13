@@ -4,7 +4,7 @@ import WinXP from 'WinXP';
 import { useGA } from 'hooks';
 
 const App = () => {
-  useGA('G-310N6Y3561', 'winXP');
+  // useGA('UA-135148027-3', 'winXP');
   return <WinXP />;
 };
 

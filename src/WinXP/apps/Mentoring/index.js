@@ -165,7 +165,7 @@ function InternetExplorer({ onClose }) {
       </section>
       <div className="ie__content">
         <div className="ie__content__inner">
-            text to mentoring
+        I'm helping in take first steps in IT - check out <a href="https://mentoring.roleplayinglife.pl/">my mentoring website</a> (available only in polish)
         </div>
       </div>
       <footer className="ie__footer">
