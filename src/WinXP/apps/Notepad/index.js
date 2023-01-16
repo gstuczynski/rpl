@@ -6,12 +6,7 @@ import dropDownData from './dropDownData';
 
 export default function Notepad({ onClose }) {
 
-  const text = `- crypto website
-  - travel blog
-  - photography website
-  - implement allow users to write comments
-  - analitics
-  `
+  const text = `Be a legend in my own lifetime`
   const [docText, setDocText] = useState(text);
   const [wordWrap, setWordWrap] = useState(false);
 

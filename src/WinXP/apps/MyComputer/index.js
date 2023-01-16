@@ -106,7 +106,7 @@ function MyComputer({ onClose }) {
             alt="ie"
             className="com__address_bar__content__img"
           />
-          <div className="com__address_bar__content__text">Crypto</div>
+          <div className="com__address_bar__content__text">RolePlayingLife</div>
           <img
             src={dropdown}
             alt="dropdown"
@@ -126,7 +126,7 @@ function MyComputer({ onClose }) {
             <div className="com__content__left__card">
               <div className="com__content__left__card__header">
                 <div className="com__content__left__card__header__text">
-                  Details
+                  Partners
                 </div>
                 <img
                   src={pullup}
@@ -143,12 +143,12 @@ function MyComputer({ onClose }) {
                     alt="control"
                   />
                   <ga.OutboundLink
-                    eventLabel="https://mentoring.roleplayinglife.pl/"
-                    to="https://mentoring.roleplayinglife.pl/"
+                    eventLabel="https://humtopia.pl/"
+                    to="https://humtopia.pl/"
                     className="com__content__left__card__text link"
                     target="_blank"
                   >
-                    Mentoring
+                    Humtopia
                   </ga.OutboundLink>
                 </div>
               </div>
@@ -186,8 +186,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  // eventLabel="https://sh1zuku.csie.io"
-                  // to="https://sh1zuku.csie.io"
+                  eventLabel="https://www.instagram.com/roleplayinglife_0x/"
+                  to="https://www.instagram.com/roleplayinglife_0x/"
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -198,8 +198,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  // eventLabel="https://sh1zuku.csie.io"
-                  // to="https://sh1zuku.csie.io"
+                  eventLabel="https://www.tiktok.com/@roleplayinglife_0x"
+                  to="https://www.tiktok.com/@roleplayinglife_0x"
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -209,7 +209,7 @@ function MyComputer({ onClose }) {
                     alt="control"
                   />
                 </ga.OutboundLink>
-                <ga.OutboundLink
+                {/* <ga.OutboundLink
                   eventLabel="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
                   to="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
                   className="com__content__right__card__item--me"
@@ -220,7 +220,7 @@ function MyComputer({ onClose }) {
                     src={ytLogo}
                     alt="control"
                   />
-                </ga.OutboundLink>
+                </ga.OutboundLink> */}
               </div>
             </div>
           </div>
