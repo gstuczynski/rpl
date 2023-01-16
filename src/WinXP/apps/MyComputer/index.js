@@ -31,7 +31,6 @@ import fbLogo from 'assets/windowsIcons/fb.png';
 import instagramLogo from 'assets/windowsIcons/instagram.png';
 import tiktokLogo from 'assets/windowsIcons/tiktok.png';
 import ytLogo from 'assets/windowsIcons/yt.png';
-import mentorLogo from 'assets/windowsIcons/mentor.png';
 
 
 
@@ -106,7 +105,7 @@ function MyComputer({ onClose }) {
             alt="ie"
             className="com__address_bar__content__img"
           />
-          <div className="com__address_bar__content__text">Crypto</div>
+          <div className="com__address_bar__content__text"></div>
           <img
             src={dropdown}
             alt="dropdown"
@@ -135,21 +134,9 @@ function MyComputer({ onClose }) {
                 />
               </div>
               <div className="com__content__left__card__content">
+<div>
 
-                <div className="com__content__left__card__row">
-                  <img
-                    className="com__content__left__card__img"
-                    src={mentorLogo}
-                    alt="control"
-                  />
-                  <ga.OutboundLink
-                    eventLabel="https://mentoring.roleplayinglife.pl/"
-                    to="https://mentoring.roleplayinglife.pl/"
-                    className="com__content__left__card__text link"
-                    target="_blank"
-                  >
-                    Mentoring
-                  </ga.OutboundLink>
+
                 </div>
               </div>
             </div>
@@ -162,8 +149,8 @@ function MyComputer({ onClose }) {
               </div>
               <div className="com__content__right__card__content">
                 <ga.OutboundLink
-                  eventLabel="https://twitter.com/grzesiorz"
-                  to="https://twitter.com/grzesiorz"
+                  eventLabel=""
+                  to=""
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -174,8 +161,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  eventLabel="https://www.facebook.com/roleplayinglife"
-                  to="https://www.facebook.com/roleplayinglife"
+                  eventLabel=""
+                  to=""
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -186,8 +173,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  // eventLabel="https://sh1zuku.csie.io"
-                  // to="https://sh1zuku.csie.io"
+                                  eventLabel=""
+                                  to=""
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -198,8 +185,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  // eventLabel="https://sh1zuku.csie.io"
-                  // to="https://sh1zuku.csie.io"
+                                  eventLabel=""
+                                  to=""
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
@@ -210,8 +197,8 @@ function MyComputer({ onClose }) {
                   />
                 </ga.OutboundLink>
                 <ga.OutboundLink
-                  eventLabel="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
-                  to="https://www.youtube.com/channel/UC6L7c3A5rMn3OFqDrQYzzEA"
+                                  eventLabel=""
+                                  to=""
                   className="com__content__right__card__item--me"
                   target="_blank"
                 >
