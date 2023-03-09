@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "role-playing-life.github.io/static/css/main.c65623f0.chunk.css",
+    "main.js": "role-playing-life.github.io/static/js/main.0cdd743e.chunk.js",
+    "main.js.map": "role-playing-life.github.io/static/js/main.0cdd743e.chunk.js.map",
+    "runtime~main.js": "role-playing-life.github.io/static/js/runtime~main.3f237e22.js",
+    "runtime~main.js.map": "role-playing-life.github.io/static/js/runtime~main.3f237e22.js.map",
+    "static/js/2.eb825e91.chunk.js": "role-playing-life.github.io/static/js/2.eb825e91.chunk.js",
+    "static/js/2.eb825e91.chunk.js.map": "role-playing-life.github.io/static/js/2.eb825e91.chunk.js.map",
+    "index.html": "role-playing-life.github.io/index.html",
+    "precache-manifest.872d314090b47d6034f687bb852b0d94.js": "role-playing-life.github.io/precache-manifest.872d314090b47d6034f687bb852b0d94.js",
+    "service-worker.js": "role-playing-life.github.io/service-worker.js",
+    "static/css/main.c65623f0.chunk.css.map": "role-playing-life.github.io/static/css/main.c65623f0.chunk.css.map",
+    "static/media/The-Witcher-3-Wild-Hunt-Sword-of-Destiny.mp3": "role-playing-life.github.io/static/media/The-Witcher-3-Wild-Hunt-Sword-of-Destiny.c4461588.mp3",
+    "static/media/all-programs.ico": "role-playing-life.github.io/static/media/all-programs.a48640a2.ico",
+    "static/media/error.wav": "role-playing-life.github.io/static/media/error.199b5352.wav",
+    "static/media/find.svg": "role-playing-life.github.io/static/media/find.cfc00209.svg",
+    "static/media/narrator.ico": "role-playing-life.github.io/static/media/narrator.e23232f0.ico",
+    "static/media/restart.ico": "role-playing-life.github.io/static/media/restart.bfcfd28f.ico",
+    "static/media/restore.ico": "role-playing-life.github.io/static/media/restore.8e8ae78a.ico",
+    "static/media/smile.svg": "role-playing-life.github.io/static/media/smile.33211a17.svg",
+    "static/media/under-construction.png": "role-playing-life.github.io/static/media/under-construction.af24f452.png",
+    "static/media/view-info.ico": "role-playing-life.github.io/static/media/view-info.415b027d.ico"
+  }
+}
